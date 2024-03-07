@@ -1,0 +1,34 @@
+<h2>Tasks</h2>
+<button class="logout-button" (click)="logout()">Logout</button>
+<ng-template #noGroupData>
+    Loading...
+  </ng-template>
+  <div *ngIf= "tasks ; else noGroupData ">
+<button class="Add-Group" (click)="showModal()">Create</button>
+<table>
+    <thead>
+      <tr>
+        <th>Task ID </th>
+        <th>Description</th>
+        <th>Due Date</th>
+        <th>Asignee</th>
+        <th>Created By</th>
+        <th>Current Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.taskId }}</td>
+        <td>{{ task.description }}</td>
+        <td>{{ task.dueDate }}</td>
+        <td>{{ task.assignee }}</td>
+        <td>{{ task.createdBy }}</td>
+        <td>{{ task.currentStatus }}</td>
+<!-- 
+        <td><button (click)="viewTask(project.groupId, project.projectId)">View Task</button></td> -->
+      </tr>
+    </tbody>
+</table>
+<app-task-modal *ngIf="Modal" (showModalComponent)="setModal($event)">
+</app-task-modal>
+</div>

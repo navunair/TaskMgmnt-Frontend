@@ -1,0 +1,30 @@
+<h2>Dashboard</h2>
+<button class="logout-button" (click)="logout()">Logout</button>
+<ng-template #noGroupData>
+  Loading...
+</ng-template>
+<div *ngIf= "groupData ; else noGroupData ">
+  <button class="Add-Group" (click)="showModal()">Create</button>
+<table>
+    <thead>
+      <tr>
+        <th>Group Name</th>
+        <th>Group ID</th>
+        <th>Created At</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let group of groupData">
+        <td>{{ group.groupName }}</td>
+        <td>{{ group.groupId }}</td>
+        <td>{{ group.createdAt }}</td>
+        <td><button (click)="viewProjects(group.groupId)">View Projects</button></td>
+      </tr>
+    </tbody>
+</table>
+
+<app-modal *ngIf="Modal" (showModalComponent)="setModal($event)">
+</app-modal>
+  
+</div>

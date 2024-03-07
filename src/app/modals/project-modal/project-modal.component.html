@@ -1,0 +1,11 @@
+<div id="myModal" class="modal">
+
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <label>Enter Project Name: </label>
+      <input [(ngModel)]="projectName">
+      <label>Enter Project Description: </label>
+      <input [(ngModel)]="projectDescription">
+      <button (click)="onSubmit()">Add Project</button>
+    </div>
+</div>

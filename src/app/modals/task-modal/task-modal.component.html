@@ -1,0 +1,25 @@
+<div id="myModal" class="modal">
+
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <div>
+        <label>Enter Task Description: </label>
+        <input [(ngModel)]="description">
+      </div>
+      <div>
+        <label>Enter Due Date: </label>
+        <input placeholder="YYYY-MM-DD" [(ngModel)]="dueDate">
+      </div>
+      <div>
+        <label>Enter Assignee Mail: </label>
+        <input [(ngModel)]="assigneeMail">
+      </div>
+      <div>
+        <label>Enter Current Status Id: </label>
+        <input [(ngModel)]="currentStatusId">
+      </div>
+      <div>
+        <button (click)="onSubmit()">Add Task</button>
+      </div>     
+    </div>
+</div>
